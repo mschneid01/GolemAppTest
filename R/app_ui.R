@@ -5,12 +5,14 @@
 #' @import shiny
 #' @noRd
 app_ui <- function(request) {
-  tagList(
-    # Leave this function for adding external resources
+  shiny::fluidPage(
     golem_add_external_resources(),
-    # Your application UI logic
-    fluidPage(
-      shiny::tabPanel("Map", mod_map_ui("map_1"))
+    bslib::page_navbar(
+      title = "Ultimate Dashboard",
+      theme = bslib::bs_theme(bootswatch = "lux"),
+      bslib::nav_panel("Instructions", mod_instructions_ui("instructions_1")),
+      bslib::nav_panel("Data Table", mod_table_ui("table_1")),
+      bslib::nav_panel("Map", mod_map_ui("map_1"))
     )
   )
 }
