@@ -1,4 +1,4 @@
-g#' chart UI Function
+#' chart UI Function
 #'
 #' @description A shiny Module.
 #'
