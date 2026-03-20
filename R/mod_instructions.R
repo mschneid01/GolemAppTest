@@ -10,10 +10,9 @@
 mod_instructions_ui <- function(id) {
   ns <- NS(id)
   tagList(
-  textOutput("instruction", "To access data select the table tab \n
-             To access visualization select the chart tab \n To access the map select the map tab"),
-  textOutput("placeholder_data_entry", "Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-             sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco")
+  textOutput(ns("instructions"))
+  #textOutput(ns("placeholder_data_entry"), "Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+  #           sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco")
   )
 }
 
@@ -23,8 +22,11 @@ mod_instructions_ui <- function(id) {
 mod_instructions_server <- function(id){
   moduleServer(id, function(input, output, session){
     ns <- session$ns
-
+    output$instructions <- renderPrint({
+    print("To access data select the table tab \n
+             To access visualization select the chart tab \n To access the map select the map tab")
   })
+})
 }
 
 ## To be copied in the UI
