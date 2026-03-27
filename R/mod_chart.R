@@ -10,17 +10,19 @@
 mod_chart_ui <- function(id) {
   ns <- NS(id)
   tagList(
-
+    h3("Dummy Chart"),
+    plotOutput(ns("chart"))
   )
 }
 
 #' chart Server Functions
 #'
 #' @noRd
-mod_chart_server <- function(id){
-  moduleServer(id, function(input, output, session){
-    ns <- session$ns
-
+mod_chart_server <- function(id) {
+  moduleServer(id, function(input, output, session) {
+    output$chart <- renderPlot({
+      shinipsum::random_ggplot()
+    })
   })
 }
 

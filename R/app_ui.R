@@ -12,7 +12,8 @@ app_ui <- function(request) {
       theme = bslib::bs_theme(bootswatch = "lux"),
       bslib::nav_panel("Instructions", mod_instructions_ui("instructions_1")),
       bslib::nav_panel("Data Table", mod_table_ui("table_1")),
-      bslib::nav_panel("Map", mod_map_ui("map_1"))
+      bslib::nav_panel("Map", mod_map_ui("map_1")),
+      bslib::nav_panel("Chart", mod_chart_ui("chart_1"))
     )
   )
 }
